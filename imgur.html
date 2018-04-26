@@ -26,11 +26,31 @@ function jsonFlickrFeed(json) {
 
 function handleButtonClick(choice) {  
      document.getElementById("images").innerHTML="";
-  $.ajax({
-    url: 'https://api.flickr.com/services/feeds/photos_public.gne',
-    dataType: 'jsonp',
-    data: { "tags": choice, "format": "json" }
+      $.ajax({
+        url: "https://api.imgur.com/3/gallery/search/?q=cat&q_type=jpg&q_size_px=500",
+        method: 'GET',
+        headers: {
+       Authorization: 'Client-ID ' + 'd87800ad5071e4e'
+         }
+    })
+
+     .done(function(response) {
+
+    for (var i = 0; i < 10; i++) {
+
+        var results = response.data;
+
+        
+        console.log(results[i].images[0].link);
+       $("<img />").attr("src", results[i].images[0].link).appendTo("#images");
+
+        }
+
+          
   });
+
+   
+
    
 }
 function buttonColorChange(currentButton){
