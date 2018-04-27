@@ -3,6 +3,7 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="flickr.css">
+
 </head>
 <body>
 <button id="one" class="btn default" onClick="handleButtonClick('london');buttonColorChange('one');">Click here for london!</button>
@@ -14,6 +15,7 @@
 <div id="images"></div>
 
     <script>
+        
 
 
 function jsonFlickrFeed(json) {
@@ -27,11 +29,10 @@ function jsonFlickrFeed(json) {
 function handleButtonClick(choice) {  
      document.getElementById("images").innerHTML="";
       $.ajax({
-        url: "https://api.imgur.com/3/gallery/search/?q=cat&q_type=jpg&q_size_px=500",
+        url: "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=kKX9NZFTPWIYUWi4vHP60IiDx2DDc82x",
         method: 'GET',
-        headers: {
-       Authorization: 'Client-ID ' + 'd87800ad5071e4e'
-         }
+        dataType: 'json'
+       
     })
 
      .done(function(response) {
@@ -41,8 +42,8 @@ function handleButtonClick(choice) {
         var results = response.data;
 
         
-        console.log(results[i]);
-       $("<img />").attr("src", results[i].images[0].link).appendTo("#images");
+        console.log(results[1].images);
+       $("<img />").attr("src", results[i].images.fixed_width.url).appendTo("#images");
 
         }
 
