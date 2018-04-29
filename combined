@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="flickr.css">
+
+</head>
+<body>
+<button id="one" class="btn default" onClick="handleButtonClick('london');buttonColorChange('one');">Click here for london!</button>
+<button id="two" class="btn default" onClick="handleButtonClick('aalborg');buttonColorChange('two');">Click here for aalborg!</button>
+<button id="three" class="btn default" onClick="handleButtonClick('paris');buttonColorChange('three');">Click here for paris!</button>
+<button id="four" class="btn default" onClick="handleButtonClick('new york');buttonColorChange('four');">Click here for new york!</button>
+
+
+<div id="images"></div>
+
+    <script>
+        
+
+
+function jsonFlickrFeed(json) {
+  console.log(json);
+  
+  $.each(json.items, function(i, item) {
+    $("<img />").attr("src", item.media.m).appendTo("#images");
+  });
+};
+
+function handleButtonClick(choice) {  
+     document.getElementById("images").innerHTML="";
+      $.ajax({
+        url: "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=kKX9NZFTPWIYUWi4vHP60IiDx2DDc82x",
+        method: 'GET',
+        dataType: 'json'
+       
+    })
+
+     .done(function(response) {
+
+    for (var i = 0; i < 10; i++) {
+
+        var results = response.data;
+
+        
+        console.log(results[1].images);
+       $("<img />").attr("src", results[i].images.fixed_width.url).appendTo("#images");
+
+        }
+
+          
+  });
+
+   
+
+   
+}
+function buttonColorChange(currentButton){
+    document.getElementById("one").style.color="#000000"
+    document.getElementById("two").style.color="#000000"
+    document.getElementById("three").style.color="#000000"
+    document.getElementById("four").style.color="#000000"
+    document.getElementById(currentButton).style.color="#ff0000"
+}
+</script>
+</body>
+</html>
