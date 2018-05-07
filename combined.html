@@ -8,15 +8,19 @@
     
 </head>
 <body>
-    <img src="imageSearch.png" class="titleImage">>
-    Name: <input type="text" id="SearchInput" value="" placeholder="Search">
-<button id="one" class="btn default" onClick="handleButtonClickImgur('london');buttonColorChange('one');">Click here for Imgur!</button>
+    <img src="imageSearch.png" class="titleImage">
+    <br>
+    <div class="searchContent"> Search Term: <input type="text" id="SearchInput" value="" placeholder="Search"><button id="one" class="btn default" onClick="handleButtonClickImgur('london');buttonColorChange('one');">Click here for Imgur!</button>
 <button id="two" class="btn default" onClick="handleButtonClickGiphy('aalborg');buttonColorChange('two');">Click here for Giphy!</button>
 <button id="three" class="btn default" onClick="handleButtonClickFlickr('paris');buttonColorChange('three');">Click here for Flickr!</button>
+    
+    <div id="images"></div>
+    </div>
 
 
 
-<div id="images"></div>
+
+
 
     <script>
         
@@ -98,10 +102,10 @@ function handleButtonClickGiphy(choice) {
 }
         
 function buttonColorChange(currentButton){
-    document.getElementById("one").style.color="#000000"
-    document.getElementById("two").style.color="#000000"
-    document.getElementById("three").style.color="#000000"
-    document.getElementById("four").style.color="#000000"
+    document.getElementById("one").style.color="#ffffff"
+    document.getElementById("two").style.color="#ffffff"
+    document.getElementById("three").style.color="#ffffff"
+    document.getElementById("four").style.color="#ffffff"
     document.getElementById(currentButton).style.color="#ff0000"
 }
 </script>

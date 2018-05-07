@@ -7,24 +7,25 @@
     background-color: inherit;
     padding: 14px 28px;
     font-size: 16px;
+    
     cursor: pointer;
     display: inline-block;
 }
 
 /* On mouse-over */
-.btn:hover {background: #eee;}
+.btn:hover {background: #eee;
+}
 
 .success {color: green;}
 .info {color: dodgerblue;}
 .warning {color: orange;}
 .danger {color: red;}
-.default {color: black;}
+.default {color: white;}
 body {
-   height: 100vh;
-    width: 100%;
-    background-color: red;
-    background: linear-gradient(to bottom right, black, #000060);
-    
+   background-size: cover;
+    background: linear-gradient(to bottom right, black, grey);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
   color: #666;
   font-family: 'Open Sans', arial, sans-serif;
   
@@ -37,20 +38,42 @@ header {
   border-bottom: 5px solid #000;
   margin-bottom: 30px;}
 img{
-    width: 250px;
-    padding:2px;
+    width: auto;
+    height: 250px;
+    padding:px;
    border:1px solid #000000;
+    display: inline;
+    overflow: auto;
+    vertical-align: text-top
 
 }
-
+.searchContent{
+     display:block;
+    width: 80%;
+    height:inherit;
+    margin-left:auto;
+    margin-right:auto;
+        background: #2c2525;
+    text-align: center;
+    color: white
+    
+}
 .titleImage {
     display:block;
-    width: auto;
+    width: 80%;
     height: auto;
     margin-left:auto;
     margin-right:auto;
-        background: red
+        background: #2c2525
     
+}
+
+#images{
+    display: inline-block;
+    width: auto;
+    height:auto;
+    text-align: center;
+    background: #2c2525
 }
 
 h1 {
