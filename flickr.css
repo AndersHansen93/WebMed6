@@ -20,11 +20,16 @@
 .danger {color: red;}
 .default {color: black;}
 body {
-  background-color: #fff;
+   height: 100vh;
+    width: 100%;
+    background-color: red;
+    background: linear-gradient(to bottom right, black, #000060);
+    
   color: #666;
   font-family: 'Open Sans', arial, sans-serif;
-  width: 1366px;
+  
   margin: 0 auto 0 auto;}
+
 
 header {
   display: block;
@@ -36,6 +41,16 @@ img{
     padding:2px;
    border:1px solid #000000;
 
+}
+
+.titleImage {
+    display:block;
+    width: auto;
+    height: auto;
+    margin-left:auto;
+    margin-right:auto;
+        
+    
 }
 
 h1 {
