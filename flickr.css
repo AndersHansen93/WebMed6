@@ -104,38 +104,13 @@ input[type=submit] {
   padding: 8px 20px 8px 20px;
   margin-top: 10px;
   text-transform: uppercase;}
-
-/* Exchange rates */
-#rates div {
-  background-repeat:   no-repeat;
-  background-position: left center;
-  padding-left: 20px;}
-#rates {padding: 50px 100px 50px 100px;}
-#reload {padding: 0 100px 0 100px;}
-#rates, #reload {text-align: left;}
-.AU {background-image: url('../img/au.png');}
-.UK {background-image: url('../img/gb.png');}
-.US {background-image: url('../img/us.png');}
-
+.searchbar{
+    width: 280px;
+}
+form button#submit 
+{
+    display: inline-block;
+    color: aliceblue;
+    margin: 4px;
 }
 
-/* Example */
-#event a {
-  font-family: oswald, arial, sans-serif;
-  font-size: 120%;
-  text-transform: uppercase;
-  text-align: left;
-  line-height: 4.5em;
-  display: block; 
-  height: 120px; width: 100%;}
-#event img {
-  width: 100px;
-  height: 100px;
-  float: left;
-  margin-right: 10px;}
-#event a:hover, #sessions a:hover {color: #1fb684;}
-#sessions a {
-  font-family: oswald, arial, sans-serif;
-  font-size: 120%;}
-#sessions p {
-  margin-top: 2em;}
