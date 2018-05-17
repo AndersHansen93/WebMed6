@@ -10,10 +10,18 @@
 <body>
     <img src="imageSearch.png" class="titleImage">
     <br>
-    <div class="searchContent"> Search Term: <input type="text" id="SearchInput" value="" placeholder="Search"><button id="one" class="btn default" onClick="handleButtonClickImgur('london');buttonColorChange('one');">Click here for Imgur!</button>
-<button id="two" class="btn default" onClick="handleButtonClickGiphy('aalborg');buttonColorChange('two');">Click here for Giphy!</button>
-<button id="three" class="btn default" onClick="handleButtonClickFlickr('paris');buttonColorChange('three');">Click here for Flickr!</button>
-    
+ 
+    <div class="searchContent"> Search Term: <input class="searchbar" type="text" id="SearchInput" value="" placeholder="Search">
+            <form action="" id="form_process">
+     Poll Site
+    <input type="radio" id="r1" name="pollsites" value="Flickr" checked>Flickr
+    <input type="radio" id="r2" name="pollsites" value="Imgur">Imgur
+    <input type='radio' id="r3" name='pollsites' value='Giphy'>Giphy
+</form>
+        
+<button class="btn btn-success" id="submit"  onclick="myFunction()">Search</button>
+        
+
     <div id="images"></div>
     </div>
 
@@ -23,9 +31,72 @@
 
 
     <script>
+        function myFunction() 
+        {
+            if(document.getElementById('r1').checked)
+            {
+            document.getElementById("images").innerHTML="";
+  $.ajax({
+    url: 'https://api.flickr.com/services/feeds/photos_public.gne',
+    dataType: 'jsonp',
+    data: { "tags": document.getElementById('SearchInput').value, "format": "json" }
+  });
+            }
+             if(document.getElementById('r2').checked)
+            {
+                 document.getElementById("images").innerHTML="";
+      $.ajax({
+        url: "https://api.imgur.com/3/gallery/search/?q="+document.getElementById('SearchInput').value+"&q_type=jpg",
+        method: 'GET',
+        headers: {
+       Authorization: 'Client-ID ' + 'd87800ad5071e4e'
+         }
+    })
+
+     .done(function(response) {
+
+    for (var i = 0; i < 10; i++) {
+
+        var results = response.data;
+
         
+        console.log(results[i]);
+       $("<img />").attr("src", results[i].images[0].link).appendTo("#images");
 
+        }
 
+          
+  });
+            }
+             if(document.getElementById('r3').checked)
+            {
+                 document.getElementById("images").innerHTML="";
+      $.ajax({
+        url: "http://api.giphy.com/v1/gifs/search?q="+document.getElementById('SearchInput').value+"&api_key=kKX9NZFTPWIYUWi4vHP60IiDx2DDc82x",
+        method: 'GET',
+        dataType: 'json'
+       
+    })
+
+     .done(function(response) {
+
+    for (var i = 0; i < 10; i++) {
+
+        var results = response.data;
+
+        
+        console.log(results[1].images);
+       $("<img />").attr("src", results[i].images.fixed_width.url).appendTo("#images");
+
+        }
+
+          
+  });
+            }
+            
+        }
+           
+           
 function jsonFlickrFeed(json) {
   console.log(json);
  for (var i = 0; i < 10; i++) {

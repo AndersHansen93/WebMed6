@@ -7,13 +7,13 @@
     background-color: inherit;
     padding: 14px 28px;
     font-size: 16px;
-    
+    color: white;
     cursor: pointer;
     display: inline-block;
 }
 
 /* On mouse-over */
-.btn:hover {background: #eee;
+.btn:hover {background: rgba(0, 0, 0, 0.17);
 }
 
 .success {color: green;}
@@ -32,11 +32,6 @@ body {
   margin: 0 auto 0 auto;}
 
 
-header {
-  display: block;
-  height: 140px;
-  border-bottom: 5px solid #000;
-  margin-bottom: 30px;}
 img{
     width: auto;
     height: 250px;
@@ -72,97 +67,33 @@ img{
     display: inline-block;
     width: auto;
     height:auto;
+    min-height: 75vh;
     text-align: center;
-    background: #2c2525
+    background: #2c2525;
+    vertical-align: top
 }
 
-h1 {
-  font-weight: normal;
-  margin: 28px 0 0 0;
-  float: left;
-  width: 225px;
-  height: 90px;
-  background-image: url('../img/maker-logo.png');
-  background-repeat: no-repeat;
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;}
 
-h2 {
-  font-size: 2.4em;
-  margin: 0.7em 0 1.7em 0;
-  padding: 0;
-  color: #000;
-  line-height: 1em;
-  letter-spacing: -.06em;}
-
-h3 {
-  margin: 0;
-  font-size: 1.4em;
-  color: #3fbb8a; 
-  font-family: oswald, arial, sans-serif;}
-
-nav {
-  font-family: oswald, arial, sans-serif;
-  float: right; 
-  width: 600px;
-  padding-top: 30px;
-  font-size: 1.4em;
-  text-align: right;
-  text-transform: uppercase;}
-nav a {
-  padding-left: 30px;}
-nav a:hover, a.current {
-  color: #d71a00;}
-
-a {text-decoration: none; color: #000;}
-
-.third, .event {
-  width: 320px;
-  float: left;
-  text-align: center;}
-
-.event p {border-right: 1px solid #999; }
-#content .event:last-child p {border-right: none;}
-
-.third p {
-  padding: 0 20px 0 20px;
-  margin: 40px 0 20px 0;
-  text-align: left;
-  line-height: 1.4em;}
-
-.intro p {
-  margin: 0 0 0 0;
-  padding: 0 20px 20px 0;}
-
-
-.half {
-  padding-top: 60px;
-  width: 480px;
-  float: left;
-  text-align: center;}
-
-#vote {padding-top: 20px;}
-p#selector {margin-top: -40px;}
 
 form {
   margin: 0 0 0 90px;
-  width: 300px;}
+  width: auto;
+display: inline-block;}
 label, input {
   display: inline-block;}
 label {
-  display: block;
+  display: inline-block;
   text-align: left;
   padding-top: 10px;
   text-transform: uppercase;}
 input {
+    display: inline-block;
   border: none;
   border-radius: 5px;
   background-color: #dcdcdc;
   font-size: 1em;
   line-height: 1em;
-  width: 280px;
-  padding: 6px 10px 6px 10px;}
+  width: 28px;}
 input[type=submit] {
   background-color: #1fb684;
   color: #fff;
@@ -173,10 +104,6 @@ input[type=submit] {
   padding: 8px 20px 8px 20px;
   margin-top: 10px;
   text-transform: uppercase;}
-input[type=submit]:hover {
-  background-color: #000;
-  cursor: pointer;}
-
 
 /* Exchange rates */
 #rates div {
@@ -190,6 +117,7 @@ input[type=submit]:hover {
 .UK {background-image: url('../img/gb.png');}
 .US {background-image: url('../img/us.png');}
 
+}
 
 /* Example */
 #event a {
@@ -211,26 +139,3 @@ input[type=submit]:hover {
   font-size: 120%;}
 #sessions p {
   margin-top: 2em;}
-#sessions ul {
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  padding: 0 20px 0 20px;
-  margin: 0 0 40px 0;}
-#sessions li {
-  list-style-type: none; 
-  padding: 20px 0 20px 0; 
-  background-color: #fff; 
-  border-top: 1px solid #d6d6d6;
-  text-align: left;}
-#sessions li:first-child {
-  border-top: none;
-  padding-top: 1.8em;}
-#sessions li .time {
-  display: inline-block;
-  width: 60px;}
-#details div {
-  text-align: left;
-  padding: 1.8em 0 0em 1;}
-#details p {
-  padding: 0;
-  margin: 0.8em 0 0 0;}
